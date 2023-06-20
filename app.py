@@ -133,3 +133,8 @@ def home():
         # print(results)
         form.search.data = ''
     return render_template('index.html', form=form, results=results)
+
+
+if __name__ == "_main_":
+    app.run(debug=True)
+
