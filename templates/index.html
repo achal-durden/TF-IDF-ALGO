@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Page</title>
+    <style>.header{
+        height:15px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    form {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"] {
+        padding: 5px;
+        width: 300px;
+    }
+    input[type="submit"] {
+        padding: 5px 10px;
+    }
+    
+    h2 {
+        margin-left: 20px;
+    }
+    
+    ul {
+        margin-left: 40px;
+    }
+    
+    li {
+        margin-bottom: 10px;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    .header{
+        height: 134px;
+        background-color:#0f939f;
+    }
+    .link-list{
+        margin-left: 480px;
+        margin-top:60px;
+        border:2px red;
+    }
+    .form{
+        margin-top:20px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="form">
+      <form method="POST">
+        {{ form.hidden_tag() }} {{ form.search.label }} {{ form.search() }} {{
+        form.submit() }}
+      </form>
+    </div>
+    <div class = "pre-l">
+    <ul class="link-list">
+        {% for item in results %}
+        <div>
+            <li><a href="{{ item }}" target="_blank">{{ item }}</a></li>
+        </div>
+        {% endfor %}
+    </div>
+  </body>
+</html>
