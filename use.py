@@ -1,5 +1,3 @@
-
-
 import chardet
 
 def find_encoding(fname):
